@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="data" class="dataLayer.DataLayer">
+
+</bean>
+<bean id="service" class="serviceLayer.ServiceLayer">
+<property name="Dao" ref="data"></property>
+</bean>
+<bean id="controller" class="controller.Controller">
+<property name="ser" ref="service"></property>
+</bean>
+</beans>
